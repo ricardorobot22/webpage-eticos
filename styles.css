@@ -1,0 +1,623 @@
+/* styles.css */
+h1::after, h2::after{
+    content: "";
+    display: block;
+    width: 40%; /* Ajusta este valor para controlar la longitud de la línea */
+    height: 5px; /* Grosor de la línea */
+    background-color: #004F9B; /* Color de la línea */
+    border-radius: 5px; /* Borde redondeado */
+    margin-top: 10px; /* Espacio entre el título y la línea */
+    margin-right: auto; /* Alinea la línea a la izquierda */
+}
+
+.center-title{
+    text-align: center;
+}
+
+.center-title::after {
+    content: "";
+    display: block;
+    width: 10%; /* Ajusta este valor para controlar la longitud de la línea */
+    height: 5px; /* Grosor de la línea */
+    background-color: #004F9B; /* Color de la línea */
+    border-radius: 5px; /* Borde redondeado */
+    margin-top: 5px; /* Espacio entre el título y la línea */
+    margin-left: auto; /* Centra la línea debajo del título */
+    margin-right: auto; /* Centra la línea debajo del título */
+}
+
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: #F2F4F7;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    line-height: 1.4em;
+}
+
+.navbar {
+    background-color: #004F9B; /* Azul */
+    padding: 10px 30px;
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end; /* Alinea los elementos a la derecha */
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list li {
+    margin-left: 30px;
+}
+
+.nav-list a {
+    text-decoration: none;
+    color: white; /* Letras blancas */
+    font-size: 15px;
+    padding: 0px 0;
+    position: relative;
+}
+
+.nav-list a::after {
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    /* transition: width .3s; */
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+
+.nav-list a:hover::after {
+    width: 100%; /* Resalta con una línea inferior al hacer hover */
+}
+
+
+.navbar-2 {
+    background-color: white; /* Color blanco de fondo */
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    max-height: 25px; /* Ajusta según el tamaño de tu logo */
+}
+
+.nav-list-2 {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-list-2 li {
+    margin-left: 30px;
+    position: relative; /* Necesario para los dropdowns */
+}
+
+.nav-list-2 a {
+    text-decoration: none;
+    color: black; /* Color de texto inicial */
+    font-size: 15px;
+    padding: 10px 0;
+}
+
+.nav-list-2 a:hover {
+    font-weight: bold; /* Letras en negrita al pasar el mouse */
+}
+
+
+/* Dropdown */
+.dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: white;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+    z-index: 2;
+    /* list-style-type: none; */
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    font-size: 16px;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1; /* Color de fondo al hacer hover en subelementos */
+}
+
+/* Mostrar dropdown al hacer hover */
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+/* Botón a la derecha */
+.nav-button {
+    background-color: #004F9B;
+    border-radius: 4px;
+    color: white;
+    min-width: 120px;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1.0em;
+    box-shadow: 1px 1px 5px 0 rgba(0,0,0,0.2);
+}
+
+.nav-button:hover {
+    cursor:pointer;
+    background-color: #023463;
+}
+
+
+.hero-section {
+    position: relative;
+    width: 100%;
+    height: 100vh; /* La imagen ocupará toda la altura de la pantalla */
+    overflow: hidden;
+}
+
+/* Imagen principal */
+.hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ajusta la imagen para cubrir toda el área manteniendo su proporción */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+}
+
+/* Cuadro de texto semitransparente */
+.text-box {
+    position: absolute;
+    top: 50%;
+    right: 10%;
+    transform: translateY(-50%); /* Centra verticalmente el cuadro */
+    background-color: rgba(255,255,255,0.8);
+   
+    padding: 20px 30px;
+    max-width: 500px; /* Ajusta el tamaño máximo del cuadro */
+    z-index: 2;
+    border-radius: 16px; /* Bordes redondeados opcionales */
+}
+
+.text-box h3 {
+    margin: 0 0 10px 0;
+    font-size: 23px;
+}
+
+.text-box p {
+    margin: 10;
+    font-size: 16px;
+    
+}
+
+
+.text-image-section {
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 50px 70px;
+
+    background-image: url('https://www.eticos.com/assets/fondo1.png'), url('https://www.eticos.com/assets/fondo2.png');
+    background-position: left center, right center; /* Posiciona las imágenes */
+    background-repeat: no-repeat, no-repeat; /* Evita que las imágenes se repitan */
+    background-size: contain, contain; /* Ajusta el tamaño de las imágenes */
+}
+
+/* Estilo del contenedor de texto */
+.text-content {
+    width: 60%;
+    margin: 30px;
+}
+
+.text-content h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+}
+
+.text-content p {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+
+/* Estilo del contenedor de imágenes */
+.image-wrapper { /* Nuevo contenedor que actúa como bloque para ambas imágenes */
+    width: 50%;
+    position: relative; /* Necesario para la superposición de imágenes */
+    display: inline-block;
+    margin-left: 20%;
+    
+}
+
+.image-wrapper .image-1{
+    width: 60%;
+    position: relative;
+    z-index: 2;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.image-wrapper .image-2 {
+    width: 60%;
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 3;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Añade una sombra para destacar la imagen superpuesta */
+    transform: translate(-60%, 50%);
+    border-radius: 20px;
+}
+
+.nuestrosnegocios {
+    color: #004F9B; /* Define el color del enlace */
+    text-decoration: none; /* Elimina el subrayado por defecto */
+}
+
+.nuestrosnegocios:hover {
+    text-decoration: underline; /* Agrega el subrayado al pasar el mouse */
+}
+
+
+.info-section {
+    background-color: rgba(216, 233, 249, 1); /* Azul claro */
+    padding: 20px 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+}
+
+/* Estilo para cada elemento de información */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 20%;
+}
+
+/* Iconos en cada item */
+.info-icon {
+    width: 40px;
+    height: 40px;
+}
+
+/* Estilo del divisor */
+.divider {
+    height: 40px; /* Altura igual a la de los iconos */
+    width: 2px; /* Ancho del divisor */
+    background-color: #B0BEC5; /* Color del divisor */
+}
+
+.font-big {
+    font-size: 1.4em;
+}
+/*-----------------------------------------------------------------------------------------
+/* Estilo del título de la sección */
+
+.before-cards-section{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 50px 70px;
+
+    background-image: url('https://www.eticos.com/assets/fondo1.png');
+    background-position: left center, right center; /* Posiciona las imágenes */
+    background-repeat: no-repeat, no-repeat; /* Evita que las imágenes se repitan */
+    background-size: contain, contain; /* Ajusta el tamaño de las imágenes */
+}
+
+
+.cards-section{
+    margin:0px 0px;
+ 
+}
+.section-title {
+    text-align:left;
+    font-size: 28px;
+    margin-bottom: 30px;
+}
+
+/* Contenedor de los recuadros */
+.cards-container {
+    display: flex;
+    justify-content: space-between; /* Espacio entre los recuadros */
+    gap: 20px; /* Espacio entre cada recuadro */
+
+
+}
+
+/* Estilo de cada recuadro */
+.card {
+    background-color: #fff;
+  
+    border-radius: 16px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    width: 22%; /* Cada recuadro ocupa el 22% del contenedor */
+    text-align: center;
+}
+
+/* Estilo de la imagen en cada recuadro */
+.card-image {
+    width: 100%;
+    font-size: 0;
+    border-top-right-radius: 16px;
+    border-top-left-radius: 16px;
+  
+}
+
+/* Estilo del párrafo */
+.card p {
+    font-size: 16px;
+    margin-bottom: 15px;
+}
+
+/* Estilo del enlace (anchor) */
+.card-link {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+    bottom: 30px;
+}
+
+.card-link:hover {
+    text-decoration: underline; /* Subraya al pasar el mouse */
+}
+
+
+.map-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 20px;
+    background-color: white; /* Fondo claro para la sección */
+}
+
+/* Contenedor del mapa */
+.map-container {
+    position: relative;
+    width: 60%;
+}
+
+/* Estilo del mapa */
+.colombia-map {
+    width: 100%;
+    height: auto;
+}
+
+/* Contenedor de la información */
+.info-container {
+    width: 35%;
+    padding-left: 20px;
+}
+
+/* Estilo del párrafo */
+.info-paragraph {
+    margin-bottom: 20px;
+    font-size: 16px;
+}
+
+/* Estilo de la lista de ciudades */
+.cities-list {
+    list-style-type: none; /* Quitar las viñetas */
+    padding: 0;
+}
+
+.cities-list li {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.custom-list {
+   
+    list-style-image: url('images-prueba/Frame\ 37064.svg'); /* Usa una imagen para los elementos de la lista */
+    list-style-position: inside; /* Coloca la imagen dentro del contenido del <li> */
+    padding-left: 0px; /* Ajusta según sea necesario */
+}
+
+.custom-list li {
+    padding-left: 0px; /* Ajusta según sea necesario */
+    line-height: 1.5; /* Puede ayudar a centrar verticalmente */
+}
+
+.custom-list li:hover {
+    text-decoration: underline; /* Agrega el subrayado al pasar el mouse */
+}
+
+
+
+.carousel-section  {
+  
+    background-image: url('https://www.eticos.com/assets/fondo3.png');
+    background-repeat: no-repeat, no-repeat; /* Evita que las imágenes se repitan */
+  
+}
+
+.carousel-section .container {
+    text-align: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+
+    
+}
+
+.carousel-title {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.carousel-description {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+}
+
+/* Estilos del carrusel */
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.carousel-track-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.carousel-track {
+    display: flex;
+    justify-content: space-around; /* Distribuye el espacio uniformemente entre las imágenes */
+    align-items: center; /* Centra verticalmente las imágenes dentro del contenedor */
+    gap: 50px; /* Añade un espacio entre cada imagen */
+    padding: 50px; /* Añade un espacio alrededor del conjunto de imágenes */
+    transition: transform 0.2s ease-in-out;
+}
+
+.carousel-slide {
+ 
+    width: 100px; /* Ajusta el tamaño de la imagen */   
+    height: auto; /* Mantiene la proporción de la imagen */  
+    border-radius: 10px; /* Añade bordes redondeados (opcional) */
+    margin: 0px;
+    
+}
+
+/* Estilos de los botones de navegación */
+.carousel-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    border: none;
+    color: white;
+    font-size: 2em;
+    cursor: pointer;
+    padding: 0 10px;
+    z-index: 10;
+}
+
+.carousel-button.prev {
+    left: 10px;
+}
+
+.carousel-button.next {
+    right: 10px;
+}
+
+.carousel-anchor {
+    display: inline-block;
+    margin-top: 20px;
+    color: blue;
+    text-decoration: none;
+}
+
+.carousel-anchor:hover {
+    text-decoration: underline;
+}
+
+.custom-section {
+    display: flex;
+ 
+    justify-content: space-between;
+    
+    background-color: #ECF4FC; /* Color de fondo azul claro */
+}
+
+.carousel-container {
+    flex: 1;
+    margin-right: 20px;
+}
+
+.card-carousel {
+    display: flex;
+    overflow-x: auto;
+    padding: 20px;
+    gap: 20px; /* Distancia entre las tarjetas */
+}
+
+.profile {
+    min-width: 200px;
+    background-color: white;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.profile img {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%; /* Hacer la imagen redonda */
+    margin-bottom: 10px;
+}
+
+.content-box {
+    flex: 1;
+    background-color: #D8E9F9; /* Color de fondo azul */
+    padding: 20px;
+  
+   
+    text-align: left;
+}
+
+.content-box h2 {
+    margin-bottom: 10px;
+}
+
+.content-box p {
+    margin-bottom: 20px;
+}
+
+.button-container {
+    display: flex;
+    justify-content: flex-start;
+}
+
+button {
+    padding: 10px 20px;
+    margin-right: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #D8E9F9;
+    box-shadow: 1px 1px 5px 0 rgba(0, 0, 0, 0.1);
+    color: #007bff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+
+.before-negotes-section{
+    display: flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 50px 70px;
+
+    background-image: url('https://www.eticos.com/assets/fondo1.png'), url('https://www.eticos.com/assets/fondo2.png');
+    background-position: left center, right center; /* Posiciona las imágenes */
+    background-repeat: no-repeat, no-repeat; /* Evita que las imágenes se repitan */
+    background-size: contain, contain; /* Ajusta el tamaño de las imágenes */
+}
+
+
+
+
+
+
