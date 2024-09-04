@@ -1,2 +1,2 @@
 # webpage-eticos
-frontend for etica users
+Frontend for Etica users
